@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Clock</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <style>
+      body
+      {
+        font-family: 'Alfa Slab One', cursive;
+        color: white;
+        background-image: linear-gradient(to right, #bb71c6, #a759b0, #93419b, #7f2886, #6c0471);   
+      }
+      .main-card
+      {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .card
+      {
+        border-color: white;
+        color: #4f5c5d;
+        padding: 10px 10px 10px 10px;
+        width: 200px;
+        height: 180px;
+        margin-left: 5%;
+        margin-top: 5%;
+        -webkit-box-shadow: 0px 0px 10px 3px rgba(81,81,81,0.15);
+        -moz-box-shadow: 0px 0px 10px 3px rgba(81,81,81,0.15);
+        box-shadow: 0px 0px 10px 3px rgba(81,81,81,0.15);
+      }
+      .navbar
+      {
+        /*background: rgb(235,235,235);
+        background: linear-gradient(101deg, rgba(235,235,235,1) 0%, rgba(32,98,181,1) 57%, rgba(21,96,189,1) 100%);*/
+        background-image: linear-gradient(to right, #bb71c6, #a759b0, #93419b, #7f2886, #6c0471);   
+        
+      }
+    </style>
+  </head>
+<body>
+  <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="display: flex;flex-direction: row;">
+          <img src="world.png" alt="" width="64px" height="64px" class="d-inline-block align-top"/>
+          <h2 style="margin: 20px; color: white;">All World Clocks</h2>
+        </a>
+      </div>
+    </nav>
+    <div class="main-card">
+      <div class="card" id="turkeyClock">
+        <div class="d-none d-lg-block" >
+          <h3 style="text-align:center;margin-top:50px;" id="turkeyText">ANKARA</h3>
+        </div>
+      </div>
+      <div class="card" id="americaClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id="americaText">NEW YORK</h3>
+        </div>
+      </div>
+      <div class="card" id="tokyoClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id="tokyoText">TOKYO</h3>
+        </div>
+      </div>
+      <div class="card" id="londonClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id='londonText'>LONDON</h3>
+        </div>
+      </div>
+      <div class="card" id="berlinClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id='berlinText'>BERLIN</h3>
+        </div>
+      </div>
+      <div class="card" id="moscowClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id='moscowText'>MOSCOW</h3>
+        </div>
+      </div>
+      <div class="card" id="parisClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id='parisText'>PARIS</h3>
+        </div>
+      </div>
+      <div class="card" id="amsterdamClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id='amsterdamText'>AMSTERDAM</h3>
+        </div>
+      </div>
+      <div class="card" id="romeClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id='romeText'>ROME</h3>
+        </div>
+      </div>
+      <div class="card" id="warsawClock">
+        <div class="d-none d-lg-block">
+          <h3 style="text-align:center;margin-top:50px;" id='warsawText'>WARSAW</h3>
+        </div>
+      </div>
+  </div>
+</body>
+<script>
+
+/*var convertCard = document.getElementById('#clickCard');
+convertCard.addEventListener('click',clock);
+
+function clock() {
+    var time = new Date(),
+    hours = time.getHours(),
+    minutes = time.getMinutes(),
+    seconds = time.getSeconds();
+    americaClock = time.toLocaleString('en-Us',{timeZone:'America/New_York'});
+    tokyoClock = time.toLocaleString('en-Us',{timeZone:'Asia/Tokyo'});
+    londonClock = time.toLocaleString('en-Us',{timeZone:'Europe/London'});
+    document.querySelectorAll('#clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+    document.querySelector('#americaClock').innerHTML = americaClock;
+    document.querySelector('#tokyoClock').innerHTML = tokyoClock;
+    document.querySelector('#londonClock').innerHTML = londonClock;
+
+  function harold(standIn) {
+    if (standIn < 10) {
+      standIn = '0' + standIn
+    }
+    return standIn;
+  }
+}
+setInterval(clock, 1000);*/
+
+function clock()
+{
+  var time = new Date();
+
+turkey = time.toLocaleString('en-Us',{time:'Asia/Turkey'});
+america = time.toLocaleString('en-Us',{timeZone:'America/New_York'});
+tokyo   = time.toLocaleString('en-Us',{timeZone:'Asia/Tokyo'});
+london = time.toLocaleString('en-Us',{timeZone:'Europe/London'});
+berlin = time.toLocaleString('en-Us',{timeZone:'Europe/Berlin'});
+moscow = time.toLocaleString('en-Us',{timeZone:'Europe/Moscow'});
+paris = time.toLocaleString('en-Us',{timeZone:'Europe/Paris'});
+amsterdam = time.toLocaleString('en-Us',{timeZone:'Europe/Amsterdam'});
+rome = time.toLocaleString('en-Us',{timeZone:'Europe/Rome'});
+warsaw = time.toLocaleString('en-Us',{timeZone:'Europe/Warsaw'});
+
+
+$("#turkeyClock").click(function(){
+  $("#turkeyText").html(turkey);
+});
+
+$("#americaClock").click(function(){
+    $("#americaText").html(america); 
+});
+
+$("#tokyoClock").click(function(){
+    $("#tokyoText").html(tokyo);
+});
+$("#londonClock").click(function(){
+    $("#londonText").html(london);
+});
+$("#berlinClock").click(function(){
+    $("#berlinText").html(berlin);
+});
+$("#moscowClock").click(function(){
+    $("#moscowText").html(moscow);
+});
+$("#parisClock").click(function(){
+    $("#parisText").html(paris);
+});
+$("#amsterdamClock").click(function(){
+    $("#amsterdamText").html(amsterdam);
+});
+$("#romeClock").click(function(){
+    $("#romeText").html(rome);
+});
+$("#warsawClock").click(function(){
+    $("#warsawText").html(warsaw);
+});
+
+}
+setInterval(clock,1000);
+
+
+/*setInterval(function(){
+
+var time = new Date();
+
+turkey = time.toLocaleString('en-Us',{time:'Asia/Turkey'});
+america = time.toLocaleString('en-Us',{timeZone:'America/New_York'});
+tokyo   = time.toLocaleString('en-Us',{timeZone:'Asia/Tokyo'});
+london = time.toLocaleString('en-Us',{timeZone:'Europe/London'});
+berlin = time.toLocaleString('en-Us',{timeZone:'Europe/Berlin'});
+moscow = time.toLocaleString('en-Us',{timeZone:'Europe/Moscow'});
+paris = time.toLocaleString('en-Us',{timeZone:'Europe/Paris'});
+amsterdam = time.toLocaleString('en-Us',{timeZone:'Europe/Amsterdam'});
+
+
+$("#turkeyClock").click(setInterval(function(){
+  $("#turkeyText").html(turkey);
+},1000));
+
+/*$("#turkeyClock").click(function(){
+  $("#turkeyText").html(turkey);
+});
+
+$("#americaClock").click(setInterval(function(){
+    $("#americaText").html(america); 
+},1000));
+
+$("#tokyoClock").click(setInterval(function(){
+    $("#tokyoText").html(tokyo);
+},1000));
+$("#londonClock").click(setInterval(function(){
+    $("#londonText").html(london);
+},1000));
+$("#berlinClock").click(setInterval(function(){
+    $("#berlinText").html(berlin);
+},1000));
+$("#moscowClock").click(setInterval(function(){
+    $("#moscowText").html(moscow);
+},1000));
+$("#parisClock").click(setInterval(function(){
+    $("#parisText").html(paris);
+},1000));
+$("#amsterdamClock").click(setInterval(function(){
+    $("#amsterdamText").html(amsterdam);
+},1000));
+
+},1000);
+*/
+</script>
+</html>
